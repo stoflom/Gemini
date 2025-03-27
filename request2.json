@@ -1,0 +1,18 @@
+{
+    "contents": [
+        {
+            "role": "user",
+            "parts": [
+                {
+                    "text": "Translate to English"
+                },
+                {
+                    "fileData": {
+                        "fileUri": "gs://translate-botanical-descriptions/TranslateShort.csv",
+                        "mimeType": "text/csv"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+dist/
+*.tgz
+.yarn
+.pnp.*
+node_modules
+db.sqlite
+.vscode
+*.csv
+request.*
+*.out
+*.txt
+*.html
+setkey.sh
+javascript/

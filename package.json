@@ -1,0 +1,30 @@
+{
+  "name": "geminitranslate",
+  "description": "Translate tree descriptions with gemini",
+  "version": "0.0.1",
+  "main": "src/main.ts",
+  "license": "MIT",
+  "author": "C Lombard <stoflom@gmail.com>",
+  "scripts": {
+    "main": "cd src && ts-node main.ts",
+    "GeminiMain": "cd src && ts-node GeminiMain.ts",
+    "textdiff": "cd src && ts-node textdiff.ts",
+    "textcompare": "cd src && ts-node textcompare.ts",
+    "testSqlite": "cd src && ts-node testSqlite.ts",
+    "build": "cd src && tsc",
+    "run": "cd src && ts-node"
+  },
+  "dependencies": {
+    "@google-cloud/aiplatform": "^4.0.0",
+    "@google/generative-ai": "^0.24.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/sqlite3": "^5.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "private": true,
+  "packageManager": "yarn@4.7.0"
+}
