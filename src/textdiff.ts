@@ -23,8 +23,10 @@ export function wordDiff(originalText: string, modifiedText: string): string {
     const delClose = "</del>";
     const insClose = "</ins>";
 
-    const originalBuffer = originalText.split(regx);
-    const modifiedBuffer = modifiedText.split(regx);
+    // Trim inputs and split into words, filtering out empty strings
+    const originalBuffer = originalText.trim().split(regx).filter(Boolean);
+    const modifiedBuffer = modifiedText.trim().split(regx).filter(Boolean);
+
 
     let inserting = false;
     let deleting = false;
@@ -40,7 +42,8 @@ export function wordDiff(originalText: string, modifiedText: string): string {
         oCurrent = originalBuffer[0];
         mCurrent = modifiedBuffer[0];
 
-        if (oCurrent === mCurrent) { //if the word agrees finalize any inserting/deleting
+        // If the word agrees (and is not undefined, which happens if buffers are empty)
+        if (oCurrent !== undefined && oCurrent === mCurrent) {
             if (deleting) {
                 outputBuffer += delBuffer + spce + delClose;
                 deleting = false;
@@ -57,7 +60,7 @@ export function wordDiff(originalText: string, modifiedText: string): string {
         } else {    //If it disagrees, 
             // check if any of the next matchMax words in B agrees, 
             matchIndex = -1;
-            for (let i = 1; i < matchMax; i++) {
+            for (let i = 1; i < matchMax && i < modifiedBuffer.length; i++) {
                 if (modifiedBuffer[i] === oCurrent) {
                     matchIndex = i;
                     break;
@@ -65,6 +68,11 @@ export function wordDiff(originalText: string, modifiedText: string): string {
             }
             if (matchIndex > -1) {
                 //Found---so insert words from B up to match
+                if (deleting) { // Finalize any ongoing deletion
+                    outputBuffer += delBuffer + spce + delClose;
+                    deleting = false;
+                    delBuffer = delOpen;
+                }
                 inserting = true;
                 for (let i = 0; i < matchIndex; i++) {
                     insBuffer += modifiedBuffer.shift() + spce;
@@ -72,7 +80,7 @@ export function wordDiff(originalText: string, modifiedText: string): string {
             }
             else { //Check if any of the next matchMax words in A agrees
                 matchIndex = -1;
-                for (let i = 1; i < matchMax; i++) {
+                for (let i = 1; i < matchMax && i < originalBuffer.length; i++) {
                     if (originalBuffer[i] === mCurrent) {
                         matchIndex = i;
                         break;
@@ -80,6 +88,11 @@ export function wordDiff(originalText: string, modifiedText: string): string {
                 }
                 if (matchIndex > -1 ) {
                     //Found---so delete words from A up to match
+                    if (inserting) { // Finalize any ongoing insertion
+                        outputBuffer += insBuffer + spce + insClose;
+                        inserting = false;
+                        insBuffer = insOpen;
+                    }
                     deleting = true;
                     for (let i = 0; i < matchIndex; i++) {
                         delBuffer += originalBuffer.shift() + spce;
@@ -87,18 +100,31 @@ export function wordDiff(originalText: string, modifiedText: string): string {
                 }
                 else { //No matches anywhere delete and add if defined
                     if (oCurrent) {
+                        if (inserting) { // If switching from inserting to deleting
+                            outputBuffer += insBuffer + spce + insClose;
+                            inserting = false;
+                            insBuffer = insOpen;
+                        }
                         deleting = true;
                         delBuffer += originalBuffer.shift() + spce;
                     }
                     if (mCurrent) {
+                        if (deleting && !oCurrent) { // If switching from deleting to inserting (and oCurrent was just processed)
+                            outputBuffer += delBuffer + spce + delClose;
+                            deleting = false;
+                            delBuffer = delOpen;
+                        }
                         inserting = true;
                         insBuffer += modifiedBuffer.shift() + spce;
                     }
                 }
             }
         }
-    } while (originalBuffer[0] || modifiedBuffer[0]);
-    //Do final closure
+    // Loop as long as there are words in either buffer.
+    // The originalBuffer[0] || modifiedBuffer[0] condition works because undefined is falsy,
+    // and actual words (even empty strings, if not filtered) are truthy.
+    } while (originalBuffer.length > 0 || modifiedBuffer.length > 0);
+    //Do final closure for any pending deletions or insertions
     if (deleting) {
         outputBuffer += delBuffer + spce + delClose;
     }
@@ -106,6 +132,7 @@ export function wordDiff(originalText: string, modifiedText: string): string {
         outputBuffer += insBuffer + spce + insClose;
     }
     return outputBuffer;
+    // return outputBuffer.trimEnd(); // Optionally remove trailing space
 }
 
 // Example usage
