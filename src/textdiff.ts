@@ -131,11 +131,11 @@ export function wordDiff(originalText: string, modifiedText: string): string {
     if (inserting) {
         outputBuffer += insBuffer + spce + insClose;
     }
-    return outputBuffer;
-    // return outputBuffer.trimEnd(); // Optionally remove trailing space
+    return outputBuffer.trimEnd(); // Optionally remove trailing space
 }
 
 // Example usage
+
 
 // const text1 = "min1 zero one too tree for fyve sevn eight nine ten fourteen fifteen";
 // const text2 = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen";
