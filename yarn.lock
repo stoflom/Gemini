@@ -21,20 +21,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@google-cloud/aiplatform@npm:^4.1.0":
-  version: 4.1.0
-  resolution: "@google-cloud/aiplatform@npm:4.1.0"
+"@google-cloud/aiplatform@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@google-cloud/aiplatform@npm:4.2.0"
   dependencies:
-    google-gax: "npm:^5.0.0-rc.0"
-    protobuf.js: "npm:^1.1.2"
-  checksum: 10c0/d74c9b6e4a6e51f996b08888db8fdba3fd57646caf7f8cb1a6aeea1ac1858f71a2fc342d1c77db1f2d74806b1053348a15228b46b4d2ebaafa87be5ef23e379b
+    google-gax: "npm:^5.0.1-rc.0"
+  checksum: 10c0/f377d9f6947815df70d6ba2ef3813ea985a9f639833f5f54241cbc95c4fa02230e64e1446248e5a2d3903f2205be25fb99d77c3033c4932ae099185b4387da79
   languageName: node
   linkType: hard
 
-"@google/generative-ai@npm:^0.24.0":
-  version: 0.24.0
-  resolution: "@google/generative-ai@npm:0.24.0"
-  checksum: 10c0/31452bf2653cdee7fd61eb209f16ac0ef82c94c4175909ba40e1088e938e3e19e01f628dfb80d429dae3338fc8487e9a0fd8a6ff0164189f2722211175690b0b
+"@google/generative-ai@npm:^0.24.1":
+  version: 0.24.1
+  resolution: "@google/generative-ai@npm:0.24.1"
+  checksum: 10c0/8da77fc648b04fc2ecef53e75230e2ee67a8fd29a34b6b8874e77a7332b2a1e4b51d44dd9eb604fb063ed8ea46d293aac5b1e2a955ae2435e2582a265f2cb80d
   languageName: node
   linkType: hard
 
@@ -305,12 +304,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.15.3":
-  version: 22.15.3
-  resolution: "@types/node@npm:22.15.3"
+"@types/node@npm:^22.15.23":
+  version: 22.15.23
+  resolution: "@types/node@npm:22.15.23"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/2879f012d1aeba0bfdb5fed80d165f4f2cb3d1f2e1f98a24b18d4a211b4ace7d64bf2622784c78355982ffc1081ba79d0934efc2fb8353913e5871a63609661f
+  checksum: 10c0/e3ae0629dfb4357dad2a7838c481656abf089d852d83f0d0f14368f03ad21ce276cbecfdf62be2276ef39920db6b114e5bc8d87c37714bbab9aefb0ce1eb1473
   languageName: node
   linkType: hard
 
@@ -1001,9 +1000,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "geminitranslate@workspace:."
   dependencies:
-    "@google-cloud/aiplatform": "npm:^4.1.0"
-    "@google/generative-ai": "npm:^0.24.0"
-    "@types/node": "npm:^22.15.3"
+    "@google-cloud/aiplatform": "npm:^4.2.0"
+    "@google/generative-ai": "npm:^0.24.1"
+    "@types/node": "npm:^22.15.23"
     "@types/sqlite3": "npm:^5.1.0"
     sqlite3: "npm:^5.1.7"
     ts-node: "npm:^10.9.2"
@@ -1069,9 +1068,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-gax@npm:^5.0.0-rc.0":
-  version: 5.0.0-rc.3
-  resolution: "google-gax@npm:5.0.0-rc.3"
+"google-gax@npm:^5.0.1-rc.0":
+  version: 5.0.1-rc.1
+  resolution: "google-gax@npm:5.0.1-rc.1"
   dependencies:
     "@grpc/grpc-js": "npm:^1.12.6"
     "@grpc/proto-loader": "npm:^0.7.13"
@@ -1083,9 +1082,9 @@ __metadata:
     node-fetch: "npm:^3.3.2"
     object-hash: "npm:^3.0.0"
     proto3-json-serializer: "npm:^3.0.0"
-    protobufjs: "npm:^7.4.0"
+    protobufjs: "npm:^7.5.0"
     retry-request: "npm:^8.0.0"
-  checksum: 10c0/b64ca698aa3968a773965b35025763fd12d20feea7fd455d9e0b1b231ee80f3a3df6b17ce3dd43c4da8af38df5ad59ccb23896cb469657f3cff8ecef8e70c89e
+  checksum: 10c0/67af24a8f5d45253b81866ff2b946d10ae342a7d0751f723f29aeb1cb6a18c0af24b6121ba47a248eca20ec1ca7752a254c39bf020b1978a1f185dd78be90e95
   languageName: node
   linkType: hard
 
@@ -1355,13 +1354,6 @@ __metadata:
   version: 5.2.3
   resolution: "long@npm:5.2.3"
   checksum: 10c0/6a0da658f5ef683b90330b1af76f06790c623e148222da9d75b60e266bbf88f803232dd21464575681638894a84091616e7f89557aa087fd14116c0f4e0e43d9
-  languageName: node
-  linkType: hard
-
-"long@npm:~1.1.2":
-  version: 1.1.5
-  resolution: "long@npm:1.1.5"
-  checksum: 10c0/765215b2c1d15beaf806fe41996bfc5ee10572f33c7852ae1054ee381b0488556ee91be9c85bc58dd8e9a691e0cd2617852a8fce25db600d49907cc4f0f4daac
   languageName: node
   linkType: hard
 
@@ -1878,15 +1870,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"protobuf.js@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "protobuf.js@npm:1.1.2"
-  dependencies:
-    long: "npm:~1.1.2"
-  checksum: 10c0/b0352b746a47919579ed80d7e3bc3d34c7e95f15519b2de68149637c788939e8891c3d5980fec43b5499cffb5b200af01daa15d7c1def38477b1c3bf09fcfdff
-  languageName: node
-  linkType: hard
-
 "protobufjs@npm:^7.2.5, protobufjs@npm:^7.4.0":
   version: 7.4.0
   resolution: "protobufjs@npm:7.4.0"
@@ -1904,6 +1887,26 @@ __metadata:
     "@types/node": "npm:>=13.7.0"
     long: "npm:^5.0.0"
   checksum: 10c0/a5460a63fe596523b9a067cbce39a6b310d1a71750fda261f076535662aada97c24450e18c5bc98a27784f70500615904ff1227e1742183509f0db4fdede669b
+  languageName: node
+  linkType: hard
+
+"protobufjs@npm:^7.5.0":
+  version: 7.5.2
+  resolution: "protobufjs@npm:7.5.2"
+  dependencies:
+    "@protobufjs/aspromise": "npm:^1.1.2"
+    "@protobufjs/base64": "npm:^1.1.2"
+    "@protobufjs/codegen": "npm:^2.0.4"
+    "@protobufjs/eventemitter": "npm:^1.1.0"
+    "@protobufjs/fetch": "npm:^1.1.0"
+    "@protobufjs/float": "npm:^1.0.2"
+    "@protobufjs/inquire": "npm:^1.1.0"
+    "@protobufjs/path": "npm:^1.1.2"
+    "@protobufjs/pool": "npm:^1.1.0"
+    "@protobufjs/utf8": "npm:^1.1.0"
+    "@types/node": "npm:>=13.7.0"
+    long: "npm:^5.0.0"
+  checksum: 10c0/c4ac6298280dfe6116e7a1b722310de807037b1abed816db2af2a595ddc9dc6160447eebd4ad8e2968d41f0f85375f62e893adfe760af1a943d195931c7bb875
   languageName: node
   linkType: hard
 
