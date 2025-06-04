@@ -2,6 +2,11 @@ import { Database, Statement } from 'sqlite3';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const apiKey = process.env['GEMINI_API_KEY']; // Get API key from environment
+if (!apiKey) {
+    console.error("GEMINI_API_KEY environment variable not set.");
+    process.exit(1);
+}
+
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -22,9 +27,10 @@ async function sleep(ms: number): Promise<void> {
 }
 
 // Open a SQLite database, stored in the file: 
-const db = new Database(dwca_database, (err: { message: string }) => {
+const db = new Database(dwca_database, (err: Error | null) => {
     if (err) {
         console.error('Error opening database:', err.message);
+        process.exit(1);
     } else {
         console.log('Connected to the SQLite database.');
     }
@@ -45,6 +51,7 @@ const select_stmt = db.prepare( //NOTE: if the colums selected change, the rowTy
     (err: { message: string }) => {
         if (err) {
             console.error('Error preparing select:', err.message);
+            process.exit(1);
         }
     }
 );
@@ -56,6 +63,7 @@ const update_stmt = db.prepare(
     (err: { message: string }) => {
         if (err) {
             console.error('Error preparing update:', err.message);
+            process.exit(1);
         }
     }
 );
