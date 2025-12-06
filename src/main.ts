@@ -11,7 +11,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
 //const dwca_database = '/home/stoffel/Workspace/trees/SARTrees/dwca-flora_descriptions-v1.42/dwca-flora_des-v1.42.db';
-const dwca_database = '/home/stoffel/Workspace/trees/SARTrees/dwca-flora_descriptions-v1.42/e-Fl_SA_Descriptions_Export20250121_reduced.db';
+const dwca_database = '/home/stoflom/Workspace/trees/SARTrees/dwca-flora_descriptions-v1.42/e-Fl_SA_Descriptions_Export20250121_reduced.db';
 
 //type rowType = { rowid: number, description: string };
 //var Rows: { rowid: number, description: string }[] = [];

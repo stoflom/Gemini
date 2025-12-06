@@ -12,7 +12,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 
-const dwca_database = '/home/stoffel/Workspace/trees/SARTrees/dwca-flora_descriptions-v1.42/e-Fl_SA_Descriptions_Export20250128_reduced.db';
+const dwca_database = '/home/stoflom/Workspace/trees/SARTrees/dwca-flora_descriptions-v1.42/e-Fl_SA_Descriptions_Export20250128_reduced.db';
 
 //type rowType = { rowid: number, TaxonText: string };
 type rowType = { rowid: number, CoalescedText: string };
