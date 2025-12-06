@@ -2,10 +2,10 @@
 Project uses new yarn which does not use node_modules subdirectory.
 See yarn website.
 
-Firts run source ./setkey.sh to setup the Gemini API key in an environment variable.
+First run source ./setkey.sh to setup the Gemini API key in an environment variable.
 
 To run src/main.ts:
->yarn start
+>yarn main
 
 To run script src/testSqlite.ts
 >yarn testSqlite
@@ -31,3 +31,12 @@ i) Press ctrl+shift+p in a TypeScript file
 ii) Choose "Select TypeScript Version"
 iii) Pick "Use Workspace Version"
 Your VSCode project is now configured to use the exact same version of TypeScript as the one you usually use, except that it will be able to properly resolve the type definitions.
+
+DEPENDENCIES
+google-cli
+sqlite3
+sqlite3-dev
+node
+yarn
+etc.
+
